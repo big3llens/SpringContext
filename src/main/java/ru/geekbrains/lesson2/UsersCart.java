@@ -44,4 +44,11 @@ public class UsersCart implements Cart{
     public List<Product> getCartList() {
         return cartList;
     }
+
+    @Override
+    public void removeProduct (int id){
+        for (Product p: repository.getProductList()) {
+            if (id == p.getId()) cartList.remove(p);
+        }
+    }
 }
